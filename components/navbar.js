@@ -14,7 +14,7 @@ export default function Home() {
         <div className="container mx-auto flex justify-between items-center">
           <Link href="/" className="text-4xl font-bold ml-20">
             <span>Kevin</span>
-            <span className="text-red-500">.</span>
+            <span className="text-pink-500">.</span>
           </Link>
           <div className="hidden md:flex space-x-8 mr-100">
             <Link href="/" className="hover:text-black hover:bg-white p-2 rounded">Accueil</Link>
