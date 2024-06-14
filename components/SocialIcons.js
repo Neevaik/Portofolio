@@ -1,9 +1,12 @@
 import { useState } from "react";
+
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const SocialIconsComponent = ({ isLoaded }) => {
+import { loadedClass } from '../tools/transition';
+
+export default function SocialIconsComponent({ isLoaded }) {
   const [isLinkedinHovered, setIsLinkedinHovered] = useState(false);
   const [isGithubHovered, setIsGithubHovered] = useState(false);
   const [isEnvelopeHovered, setIsEnvelopeHovered] = useState(false);
@@ -16,7 +19,7 @@ const SocialIconsComponent = ({ isLoaded }) => {
         rel="noopener noreferrer"
         onMouseEnter={() => setIsLinkedinHovered(true)}
         onMouseLeave={() => setIsLinkedinHovered(false)}
-        className={`text-3xl ml-6 ${isLoaded ? 'opacity-100 transform translate-y-0 transition-all duration-1000 ease-in' : 'opacity-0 transform -translate-y-8'}`}
+        className={`text-3xl ml-6 ${loadedClass(isLoaded, 200)}`}
       >
         <FontAwesomeIcon
           icon={faLinkedin}
@@ -30,7 +33,7 @@ const SocialIconsComponent = ({ isLoaded }) => {
         rel="noopener noreferrer"
         onMouseEnter={() => setIsGithubHovered(true)}
         onMouseLeave={() => setIsGithubHovered(false)}
-        className={`text-3xl ml-6 ${isLoaded ? 'opacity-100 transform translate-y-0 transition-all duration-1000 ease-in' : 'opacity-0 transform -translate-y-8'}`}
+        className={`text-3xl ml-6 ${loadedClass(isLoaded, 400)}`}
       >
         <FontAwesomeIcon
           icon={faGithub}
@@ -44,7 +47,7 @@ const SocialIconsComponent = ({ isLoaded }) => {
         rel="noopener noreferrer"
         onMouseEnter={() => setIsEnvelopeHovered(true)}
         onMouseLeave={() => setIsEnvelopeHovered(false)}
-        className={`text-3xl ml-6 ${isLoaded ? 'opacity-100 transform translate-y-0 transition-all duration-1000 ease-in' : 'opacity-0 transform -translate-y-8'}`}
+        className={`text-3xl ml-6 ${loadedClass(isLoaded, 100)}`}
       >
         <FontAwesomeIcon
           icon={faEnvelope}
@@ -54,5 +57,3 @@ const SocialIconsComponent = ({ isLoaded }) => {
     </div>
   );
 };
-
-export default SocialIconsComponent;
